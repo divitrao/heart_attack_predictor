@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Heart attack </title>
+</head>
+<body>
+<h1>HELLO please fill the below form so that my website can predict if you are high risk of gettig heart attack</h1>
+
+
+    <form action=" " method="post">
+    {% csrf_token %}
+        <div>
+    <label>
+        ENTER YOUR AGE :
+        <input type="number" name="age" min="2" max="120" required>
+    </label>
+        </div>
+        <div>
+            <label>
+                MALE
+                <input type="radio" name="gender" value="male" required>
+            </label>
+            <label>
+                FEMALE
+                <input type="radio" name="gender" value="female">
+            </label>
+        </div>
+        <div>
+            <label>
+                RESTING BLOOD PRESSURE:
+                <input type="number" max="200" min="90" name="R_B_P" required>
+            </label>
+        </div>
+        <div>
+            <label>
+                ENTER YOUR CHOLESTROL LEVELS:
+                <input type="number" min="120" max="600" name="chol" required>
+            </label>
+        </div>
+        <div>
+            <label>
+                MAX heart rate achived :
+                <input type="number" max="230" min="65" name="heart_rate" required>
+            </label>
+        </div>
+
+        <div>
+            <label>
+                treadmill ECG stress test:
+                <input type="number" min="0.0" max="7.5" step="0.1" name="treadmill_ECG" required>
+            </label>
+        </div>
+        <div>
+            <label>
+                is your fasting blood sugar greater than 120 mg/dl ?
+            <label>
+                YES
+                <input type="radio" name="fbs" value=1  required>
+            </label>
+                <label>
+                    NO
+                    <input type="radio" name="fbs" value=0>
+                </label>
+            </label>
+        </div>
+        <div>
+            <label>
+                select which type of resting ECG you have
+                <label>
+                    NORMAL
+                    <input type="radio" name="rest_ecg" value=0  required>
+                </label>
+                <label>
+                    ABNORMAL
+                    <input type="radio" name="rest_ecg" value=1>
+                </label>
+                <label>
+                    HYPERNORMAL
+                    <input type="radio" name="rest_ecg" value=2>
+                </label>
+            </label>
+        </div>
+        <div>
+            <label>
+                 Do you have chest pain after doing exersise ??
+                <label>
+                    YES
+                    <input type="radio" name="agina_ex" value=1 required>
+                </label>
+                <label>
+                    NO
+                    <input type="radio" name="agina_ex" value=0>
+                </label>
+            </label>
+        </div>
+        <div>
+            <label>
+                TREDMILL ECG GRAPH CHARACTER
+                <label>
+                    UPSLOPING
+                    <input type="radio" name="graph" value=0 required>
+                </label>
+                <label>
+                    FLAT
+                    <input type="radio" name="graph" value=1>
+                </label>
+                <label>
+                    DOWNSLOPING
+                    <input type="radio" name="graph" value=2>
+                </label>
+            </label>
+        </div>
+        <div>
+            <label>
+                Number of major vessels (0–3) colored by flourosopy
+                <label>
+                    colored_0
+                    <input type="radio" name="color" value=0 required>
+                </label>
+                <label>
+                    colored_1
+                    <input type="radio" name="color" value=1>
+                </label>
+                <label>
+                    colored_2
+                    <input type="radio" name="color" value=2>
+                </label>
+            </label>
+        </div>
+        <div>
+            <label>
+                 Thalassemia
+                <label>
+                    NORMAL
+                    <input type="radio" name="thall" value=0 required>
+                </label>
+                <label>
+                    fixed_defect
+                    <input type="radio" name="thall" value=1>
+                </label>
+                <label>
+                    Reversible Defect
+                    <input type="radio" name="thall" value=2>
+                </label>
+            </label>
+
+        </div>
+        <div>
+            <label>
+                CHEST PAIN LEVEL AFTER EXERSISE
+                <label>
+                    LEVEL 1 : typical angina
+                    <input type="radio" name="agina_level" value=0 required>
+                </label>
+                <label>
+                    LEVEL 2 : atypical angina
+                    <input type="radio" name="agina_level" value=1>
+                </label>
+                <label>
+                    LEVEL 3 : non — anginal pain
+                    <input type="radio" name="agina_level" value=2>
+                </label>
+                <label>
+                    LEVEL 4 : asymptotic
+                    <input type="radio" name="agina_level" value=3>
+                </label>
+            </label>
+        </div>
+
+
+        <a href="{% url 'result_page' %}">
+<button type="submit" name="result_page" >click me </button>
+</a>
+    </form>
+
+</body>
+</html>
