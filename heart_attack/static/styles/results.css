@@ -1,0 +1,76 @@
+ /* body{
+     text-align: center;
+ } */
+
+ table,th,td{
+      border: 1px solid black;
+      border-collapse:  collapse;
+      text-align: center;
+      /* padding: 3%; */
+      width: 70%;
+      
+
+  }
+
+  table{
+      margin-top: 3%;
+      margin-left: 15%;
+  }
+
+  td{
+      height: 40px;
+      margin-left: 2%;
+      margin-right: 2%;
+  }
+
+  #info_table{
+
+    width: 50%;
+  margin: 0 auto;
+  }
+
+  .heart {
+	font-size: 150px;
+	color: #e00;
+	animation: beat .8s infinite alternate;
+	transform-origin: center;
+    /* margin-right: 0%; */
+    text-align: center;
+}
+
+/* Heart beat animation */
+@keyframes beat{
+    0% {
+        transform: scale(1);
+      }
+      25% {
+        transform: scale(1.1);
+      }
+      40% {
+        transform: scale(1);
+      }
+      60% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+}
+
+button{
+    width: 100%;
+    text-align: center;
+    height: 30px;
+}
+
+@media screen and (max-width: 1024px) {
+    button,div{
+        display: block;
+        width: 90%;
+    }  
+    
+  }
+
+  .results{
+      text-align: center;
+  }

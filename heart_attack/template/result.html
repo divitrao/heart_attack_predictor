@@ -1,4 +1,7 @@
 <!doctype html>
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'styles/results.css' %}">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,30 +12,60 @@
 </head>
 <body>
     <h1>Results</h1>
-    Age is  {{age}}
+    <div class="heart">&#x2665;</div>
+    
+
+<div id="info_table">
+    <table>
+        <tr>
+            <th>Questions</th>
+            <th>Answers</th>
+        </tr>
+{% for item_keys,items_value in pass_value %}
+ <!-- {{item_keys}}------{{items_value}} -->
+
+    <tr>
+        <td>{{item_keys}}</td>
+        <td>{{items_value}}</td>
+    </tr>
+      
+
+        
+{% endfor %}
+</table>
+</div>
+
+<div class="results">
+{% if attack_result == 1 %}
+<h1 style="color: red;">
+You might be at high risk of getting an heart attack
+</h1>
+<div id="reduceRisk">
+    <h3>What can I do to lower my risk of heart disease?</h3>
+<p>Fortunately, there are many things you can do to reduce your chances of getting heart disease:</p>
+</div>
+<!--     
+    {% for i in ifAtHighRisk  %}
+
+    {{i}}
+
+    {% endfor %}
+    -->
+{{ ifAtHighRisk }}
+
+</div>
+
+{% else %}
+
+<h1 style="color: green;">
+    You are not at high risk of getting an heart attack but take care
+</h1>
+</div>
+{% endif  %}
 <a href="{% url 'home_page' %}">
     <button type="submit">
         GO BACK
     </button>
 </a>
-{% for items in pass_value %}
-{{items}}
-    <br>
-{% endfor %}
-
-
-{% if attack_result == 1 %}
-<h1>
-You might be at high risk of getting an heart attack
-</h1>
-
-{% else %}
-
-<h1>
-    You are not at high risk of getting an heart attack but take care
-</h1>
-
-{% endif  %}
-
 </body>
 </html>
